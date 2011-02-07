@@ -1,0 +1,287 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		655E924D13006FC6003D0CB8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655E924C13006FC6003D0CB8 /* Cocoa.framework */; };
+		655E925713006FC6003D0CB8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 655E925513006FC6003D0CB8 /* InfoPlist.strings */; };
+		655E925A13006FC6003D0CB8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E925913006FC6003D0CB8 /* main.m */; };
+		655E925D13006FC6003D0CB8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 655E925B13006FC6003D0CB8 /* Credits.rtf */; };
+		655E926013006FC6003D0CB8 /* SinaTApiAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E925F13006FC6003D0CB8 /* SinaTApiAppDelegate.m */; };
+		655E926313006FC6003D0CB8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655E926113006FC6003D0CB8 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		655E924813006FC6003D0CB8 /* SinaTApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaTApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		655E924C13006FC6003D0CB8 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		655E924F13006FC6003D0CB8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		655E925013006FC6003D0CB8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		655E925113006FC6003D0CB8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		655E925413006FC6003D0CB8 /* SinaTApi-Info.plist */ = {isa = PBXFileReference; path = "SinaTApi-Info.plist"; sourceTree = "<group>"; };
+		655E925613006FC6003D0CB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		655E925813006FC6003D0CB8 /* SinaTApi-Prefix.pch */ = {isa = PBXFileReference; path = "SinaTApi-Prefix.pch"; sourceTree = "<group>"; };
+		655E925913006FC6003D0CB8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		655E925C13006FC6003D0CB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		655E925E13006FC6003D0CB8 /* SinaTApiAppDelegate.h */ = {isa = PBXFileReference; path = SinaTApiAppDelegate.h; sourceTree = "<group>"; };
+		655E925F13006FC6003D0CB8 /* SinaTApiAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SinaTApiAppDelegate.m; sourceTree = "<group>"; };
+		655E926213006FC6003D0CB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		655E924513006FC5003D0CB8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				655E924D13006FC6003D0CB8 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		655E923D13006FC5003D0CB8 = {
+			isa = PBXGroup;
+			children = (
+				655E925213006FC6003D0CB8 /* SinaTApi */,
+				655E924B13006FC6003D0CB8 /* Frameworks */,
+				655E924913006FC6003D0CB8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		655E924913006FC6003D0CB8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				655E924813006FC6003D0CB8 /* SinaTApi.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		655E924B13006FC6003D0CB8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				655E924C13006FC6003D0CB8 /* Cocoa.framework */,
+				655E924E13006FC6003D0CB8 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		655E924E13006FC6003D0CB8 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				655E924F13006FC6003D0CB8 /* AppKit.framework */,
+				655E925013006FC6003D0CB8 /* CoreData.framework */,
+				655E925113006FC6003D0CB8 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		655E925213006FC6003D0CB8 /* SinaTApi */ = {
+			isa = PBXGroup;
+			children = (
+				655E925E13006FC6003D0CB8 /* SinaTApiAppDelegate.h */,
+				655E925F13006FC6003D0CB8 /* SinaTApiAppDelegate.m */,
+				655E926113006FC6003D0CB8 /* MainMenu.xib */,
+				655E925313006FC6003D0CB8 /* Supporting Files */,
+			);
+			path = SinaTApi;
+			sourceTree = "<group>";
+		};
+		655E925313006FC6003D0CB8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				655E925413006FC6003D0CB8 /* SinaTApi-Info.plist */,
+				655E925513006FC6003D0CB8 /* InfoPlist.strings */,
+				655E925813006FC6003D0CB8 /* SinaTApi-Prefix.pch */,
+				655E925913006FC6003D0CB8 /* main.m */,
+				655E925B13006FC6003D0CB8 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		655E924713006FC5003D0CB8 /* SinaTApi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 655E926613006FC6003D0CB8 /* Build configuration list for PBXNativeTarget "SinaTApi" */;
+			buildPhases = (
+				655E924413006FC5003D0CB8 /* Sources */,
+				655E924513006FC5003D0CB8 /* Frameworks */,
+				655E924613006FC5003D0CB8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SinaTApi;
+			productName = SinaTApi;
+			productReference = 655E924813006FC6003D0CB8 /* SinaTApi.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		655E923F13006FC5003D0CB8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = Personne;
+			};
+			buildConfigurationList = 655E924213006FC5003D0CB8 /* Build configuration list for PBXProject "SinaTApi" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 655E923D13006FC5003D0CB8;
+			productRefGroup = 655E924913006FC6003D0CB8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				655E924713006FC5003D0CB8 /* SinaTApi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		655E924613006FC5003D0CB8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				655E925713006FC6003D0CB8 /* InfoPlist.strings in Resources */,
+				655E925D13006FC6003D0CB8 /* Credits.rtf in Resources */,
+				655E926313006FC6003D0CB8 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		655E924413006FC5003D0CB8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				655E925A13006FC6003D0CB8 /* main.m in Sources */,
+				655E926013006FC6003D0CB8 /* SinaTApiAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		655E925513006FC6003D0CB8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				655E925613006FC6003D0CB8 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		655E925B13006FC6003D0CB8 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				655E925C13006FC6003D0CB8 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		655E926113006FC6003D0CB8 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				655E926213006FC6003D0CB8 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		655E926413006FC6003D0CB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		655E926513006FC6003D0CB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		655E926713006FC6003D0CB8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SinaTApi/SinaTApi-Prefix.pch";
+				INFOPLIST_FILE = "SinaTApi/SinaTApi-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		655E926813006FC6003D0CB8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SinaTApi/SinaTApi-Prefix.pch";
+				INFOPLIST_FILE = "SinaTApi/SinaTApi-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		655E924213006FC5003D0CB8 /* Build configuration list for PBXProject "SinaTApi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				655E926413006FC6003D0CB8 /* Debug */,
+				655E926513006FC6003D0CB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		655E926613006FC6003D0CB8 /* Build configuration list for PBXNativeTarget "SinaTApi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				655E926713006FC6003D0CB8 /* Debug */,
+				655E926813006FC6003D0CB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 655E923F13006FC5003D0CB8 /* Project object */;
+}
