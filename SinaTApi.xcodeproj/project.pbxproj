@@ -13,6 +13,29 @@
 		655E925D13006FC6003D0CB8 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 655E925B13006FC6003D0CB8 /* Credits.rtf */; };
 		655E926013006FC6003D0CB8 /* SinaTApiAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E925F13006FC6003D0CB8 /* SinaTApiAppDelegate.m */; };
 		655E926313006FC6003D0CB8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655E926113006FC6003D0CB8 /* MainMenu.xib */; };
+		655E92A4130082A6003D0CB8 /* DirectMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E926C130082A6003D0CB8 /* DirectMessage.m */; };
+		655E92A5130082A6003D0CB8 /* Status.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E926E130082A6003D0CB8 /* Status.m */; };
+		655E92A6130082A6003D0CB8 /* STComment.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E9270130082A6003D0CB8 /* STComment.m */; };
+		655E92A7130082A6003D0CB8 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E9272130082A6003D0CB8 /* User.m */; };
+		655E92A8130082A6003D0CB8 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E9275130082A6003D0CB8 /* Constants.m */; };
+		655E92A9130082A6003D0CB8 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 655E927D130082A6003D0CB8 /* Base64Transcoder.c */; };
+		655E92AA130082A6003D0CB8 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E9280130082A6003D0CB8 /* NSMutableURLRequest+Parameters.m */; };
+		655E92AB130082A6003D0CB8 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E9282130082A6003D0CB8 /* NSString+URLEncoding.m */; };
+		655E92AC130082A6003D0CB8 /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E9284130082A6003D0CB8 /* NSURL+Base.m */; };
+		655E92AD130082A6003D0CB8 /* OAAsynchronousDataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E9286130082A6003D0CB8 /* OAAsynchronousDataFetcher.m */; };
+		655E92AE130082A6003D0CB8 /* OAConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E9288130082A6003D0CB8 /* OAConsumer.m */; };
+		655E92AF130082A6003D0CB8 /* OADataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E928A130082A6003D0CB8 /* OADataFetcher.m */; };
+		655E92B0130082A6003D0CB8 /* OAHMAC_SHA1SignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E928C130082A6003D0CB8 /* OAHMAC_SHA1SignatureProvider.m */; };
+		655E92B1130082A6003D0CB8 /* OAMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E928E130082A6003D0CB8 /* OAMutableURLRequest.m */; };
+		655E92B2130082A6003D0CB8 /* OAPlaintextSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E9290130082A6003D0CB8 /* OAPlaintextSignatureProvider.m */; };
+		655E92B3130082A6003D0CB8 /* OARequestParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E9292130082A6003D0CB8 /* OARequestParameter.m */; };
+		655E92B4130082A6003D0CB8 /* OAServiceTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E9294130082A6003D0CB8 /* OAServiceTicket.m */; };
+		655E92B5130082A6003D0CB8 /* OAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E9297130082A6003D0CB8 /* OAToken.m */; };
+		655E92B6130082A6003D0CB8 /* OAToken_KeychainExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E9299130082A6003D0CB8 /* OAToken_KeychainExtensions.m */; };
+		655E92B7130082A6003D0CB8 /* OAuthBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E929B130082A6003D0CB8 /* OAuthBase.m */; };
+		655E92B8130082A6003D0CB8 /* SinaApiParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E92A0130082A6003D0CB8 /* SinaApiParser.m */; };
+		655E92B9130082A6003D0CB8 /* SinaApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E92A2130082A6003D0CB8 /* SinaApiRequest.m */; };
+		655E92BA130082A6003D0CB8 /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655E92A3130082A6003D0CB8 /* YAJL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +44,61 @@
 		655E924F13006FC6003D0CB8 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		655E925013006FC6003D0CB8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		655E925113006FC6003D0CB8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		655E925413006FC6003D0CB8 /* SinaTApi-Info.plist */ = {isa = PBXFileReference; path = "SinaTApi-Info.plist"; sourceTree = "<group>"; };
+		655E925413006FC6003D0CB8 /* SinaTApi-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SinaTApi-Info.plist"; sourceTree = "<group>"; };
 		655E925613006FC6003D0CB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		655E925813006FC6003D0CB8 /* SinaTApi-Prefix.pch */ = {isa = PBXFileReference; path = "SinaTApi-Prefix.pch"; sourceTree = "<group>"; };
+		655E925813006FC6003D0CB8 /* SinaTApi-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SinaTApi-Prefix.pch"; sourceTree = "<group>"; };
 		655E925913006FC6003D0CB8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		655E925C13006FC6003D0CB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		655E925E13006FC6003D0CB8 /* SinaTApiAppDelegate.h */ = {isa = PBXFileReference; path = SinaTApiAppDelegate.h; sourceTree = "<group>"; };
+		655E925E13006FC6003D0CB8 /* SinaTApiAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SinaTApiAppDelegate.h; sourceTree = "<group>"; };
 		655E925F13006FC6003D0CB8 /* SinaTApiAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SinaTApiAppDelegate.m; sourceTree = "<group>"; };
 		655E926213006FC6003D0CB8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		655E926B130082A6003D0CB8 /* DirectMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirectMessage.h; sourceTree = "<group>"; };
+		655E926C130082A6003D0CB8 /* DirectMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirectMessage.m; sourceTree = "<group>"; };
+		655E926D130082A6003D0CB8 /* Status.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Status.h; sourceTree = "<group>"; };
+		655E926E130082A6003D0CB8 /* Status.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Status.m; sourceTree = "<group>"; };
+		655E926F130082A6003D0CB8 /* STComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STComment.h; sourceTree = "<group>"; };
+		655E9270130082A6003D0CB8 /* STComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STComment.m; sourceTree = "<group>"; };
+		655E9271130082A6003D0CB8 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		655E9272130082A6003D0CB8 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		655E9274130082A6003D0CB8 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		655E9275130082A6003D0CB8 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		655E927D130082A6003D0CB8 /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64Transcoder.c; sourceTree = "<group>"; };
+		655E927E130082A6003D0CB8 /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
+		655E927F130082A6003D0CB8 /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
+		655E9280130082A6003D0CB8 /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
+		655E9281130082A6003D0CB8 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		655E9282130082A6003D0CB8 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		655E9283130082A6003D0CB8 /* NSURL+Base.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Base.h"; sourceTree = "<group>"; };
+		655E9284130082A6003D0CB8 /* NSURL+Base.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Base.m"; sourceTree = "<group>"; };
+		655E9285130082A6003D0CB8 /* OAAsynchronousDataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAAsynchronousDataFetcher.h; sourceTree = "<group>"; };
+		655E9286130082A6003D0CB8 /* OAAsynchronousDataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAAsynchronousDataFetcher.m; sourceTree = "<group>"; };
+		655E9287130082A6003D0CB8 /* OAConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAConsumer.h; sourceTree = "<group>"; };
+		655E9288130082A6003D0CB8 /* OAConsumer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAConsumer.m; sourceTree = "<group>"; };
+		655E9289130082A6003D0CB8 /* OADataFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OADataFetcher.h; sourceTree = "<group>"; };
+		655E928A130082A6003D0CB8 /* OADataFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OADataFetcher.m; sourceTree = "<group>"; };
+		655E928B130082A6003D0CB8 /* OAHMAC_SHA1SignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAHMAC_SHA1SignatureProvider.h; sourceTree = "<group>"; };
+		655E928C130082A6003D0CB8 /* OAHMAC_SHA1SignatureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAHMAC_SHA1SignatureProvider.m; sourceTree = "<group>"; };
+		655E928D130082A6003D0CB8 /* OAMutableURLRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAMutableURLRequest.h; sourceTree = "<group>"; };
+		655E928E130082A6003D0CB8 /* OAMutableURLRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAMutableURLRequest.m; sourceTree = "<group>"; };
+		655E928F130082A6003D0CB8 /* OAPlaintextSignatureProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAPlaintextSignatureProvider.h; sourceTree = "<group>"; };
+		655E9290130082A6003D0CB8 /* OAPlaintextSignatureProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAPlaintextSignatureProvider.m; sourceTree = "<group>"; };
+		655E9291130082A6003D0CB8 /* OARequestParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OARequestParameter.h; sourceTree = "<group>"; };
+		655E9292130082A6003D0CB8 /* OARequestParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OARequestParameter.m; sourceTree = "<group>"; };
+		655E9293130082A6003D0CB8 /* OAServiceTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAServiceTicket.h; sourceTree = "<group>"; };
+		655E9294130082A6003D0CB8 /* OAServiceTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAServiceTicket.m; sourceTree = "<group>"; };
+		655E9295130082A6003D0CB8 /* OASignatureProviding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OASignatureProviding.h; sourceTree = "<group>"; };
+		655E9296130082A6003D0CB8 /* OAToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAToken.h; sourceTree = "<group>"; };
+		655E9297130082A6003D0CB8 /* OAToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAToken.m; sourceTree = "<group>"; };
+		655E9298130082A6003D0CB8 /* OAToken_KeychainExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAToken_KeychainExtensions.h; sourceTree = "<group>"; };
+		655E9299130082A6003D0CB8 /* OAToken_KeychainExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAToken_KeychainExtensions.m; sourceTree = "<group>"; };
+		655E929A130082A6003D0CB8 /* OAuthBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthBase.h; sourceTree = "<group>"; };
+		655E929B130082A6003D0CB8 /* OAuthBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OAuthBase.m; sourceTree = "<group>"; };
+		655E929C130082A6003D0CB8 /* OAuthConsumer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OAuthConsumer.h; sourceTree = "<group>"; };
+		655E929F130082A6003D0CB8 /* SinaApiParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaApiParser.h; sourceTree = "<group>"; };
+		655E92A0130082A6003D0CB8 /* SinaApiParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaApiParser.m; sourceTree = "<group>"; };
+		655E92A1130082A6003D0CB8 /* SinaApiRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaApiRequest.h; sourceTree = "<group>"; };
+		655E92A2130082A6003D0CB8 /* SinaApiRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaApiRequest.m; sourceTree = "<group>"; };
+		655E92A3130082A6003D0CB8 /* YAJL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAJL.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +107,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				655E924D13006FC6003D0CB8 /* Cocoa.framework in Frameworks */,
+				655E92BA130082A6003D0CB8 /* YAJL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +117,7 @@
 		655E923D13006FC5003D0CB8 = {
 			isa = PBXGroup;
 			children = (
+				655E9269130082A6003D0CB8 /* SinaTSDK */,
 				655E925213006FC6003D0CB8 /* SinaTApi */,
 				655E924B13006FC6003D0CB8 /* Frameworks */,
 				655E924913006FC6003D0CB8 /* Products */,
@@ -100,6 +172,108 @@
 				655E925B13006FC6003D0CB8 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		655E9269130082A6003D0CB8 /* SinaTSDK */ = {
+			isa = PBXGroup;
+			children = (
+				655E926A130082A6003D0CB8 /* adt */,
+				655E9273130082A6003D0CB8 /* basicAuth */,
+				655E9274130082A6003D0CB8 /* Constants.h */,
+				655E9275130082A6003D0CB8 /* Constants.m */,
+				655E927B130082A6003D0CB8 /* OAuth */,
+				655E929D130082A6003D0CB8 /* parser */,
+				655E929F130082A6003D0CB8 /* SinaApiParser.h */,
+				655E92A0130082A6003D0CB8 /* SinaApiParser.m */,
+				655E92A1130082A6003D0CB8 /* SinaApiRequest.h */,
+				655E92A2130082A6003D0CB8 /* SinaApiRequest.m */,
+				655E92A3130082A6003D0CB8 /* YAJL.framework */,
+			);
+			path = SinaTSDK;
+			sourceTree = "<group>";
+		};
+		655E926A130082A6003D0CB8 /* adt */ = {
+			isa = PBXGroup;
+			children = (
+				655E926B130082A6003D0CB8 /* DirectMessage.h */,
+				655E926C130082A6003D0CB8 /* DirectMessage.m */,
+				655E926D130082A6003D0CB8 /* Status.h */,
+				655E926E130082A6003D0CB8 /* Status.m */,
+				655E926F130082A6003D0CB8 /* STComment.h */,
+				655E9270130082A6003D0CB8 /* STComment.m */,
+				655E9271130082A6003D0CB8 /* User.h */,
+				655E9272130082A6003D0CB8 /* User.m */,
+			);
+			path = adt;
+			sourceTree = "<group>";
+		};
+		655E9273130082A6003D0CB8 /* basicAuth */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = basicAuth;
+			sourceTree = "<group>";
+		};
+		655E927B130082A6003D0CB8 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				655E927C130082A6003D0CB8 /* Crypto */,
+				655E927F130082A6003D0CB8 /* NSMutableURLRequest+Parameters.h */,
+				655E9280130082A6003D0CB8 /* NSMutableURLRequest+Parameters.m */,
+				655E9281130082A6003D0CB8 /* NSString+URLEncoding.h */,
+				655E9282130082A6003D0CB8 /* NSString+URLEncoding.m */,
+				655E9283130082A6003D0CB8 /* NSURL+Base.h */,
+				655E9284130082A6003D0CB8 /* NSURL+Base.m */,
+				655E9285130082A6003D0CB8 /* OAAsynchronousDataFetcher.h */,
+				655E9286130082A6003D0CB8 /* OAAsynchronousDataFetcher.m */,
+				655E9287130082A6003D0CB8 /* OAConsumer.h */,
+				655E9288130082A6003D0CB8 /* OAConsumer.m */,
+				655E9289130082A6003D0CB8 /* OADataFetcher.h */,
+				655E928A130082A6003D0CB8 /* OADataFetcher.m */,
+				655E928B130082A6003D0CB8 /* OAHMAC_SHA1SignatureProvider.h */,
+				655E928C130082A6003D0CB8 /* OAHMAC_SHA1SignatureProvider.m */,
+				655E928D130082A6003D0CB8 /* OAMutableURLRequest.h */,
+				655E928E130082A6003D0CB8 /* OAMutableURLRequest.m */,
+				655E928F130082A6003D0CB8 /* OAPlaintextSignatureProvider.h */,
+				655E9290130082A6003D0CB8 /* OAPlaintextSignatureProvider.m */,
+				655E9291130082A6003D0CB8 /* OARequestParameter.h */,
+				655E9292130082A6003D0CB8 /* OARequestParameter.m */,
+				655E9293130082A6003D0CB8 /* OAServiceTicket.h */,
+				655E9294130082A6003D0CB8 /* OAServiceTicket.m */,
+				655E9295130082A6003D0CB8 /* OASignatureProviding.h */,
+				655E9296130082A6003D0CB8 /* OAToken.h */,
+				655E9297130082A6003D0CB8 /* OAToken.m */,
+				655E9298130082A6003D0CB8 /* OAToken_KeychainExtensions.h */,
+				655E9299130082A6003D0CB8 /* OAToken_KeychainExtensions.m */,
+				655E929A130082A6003D0CB8 /* OAuthBase.h */,
+				655E929B130082A6003D0CB8 /* OAuthBase.m */,
+				655E929C130082A6003D0CB8 /* OAuthConsumer.h */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
+		655E927C130082A6003D0CB8 /* Crypto */ = {
+			isa = PBXGroup;
+			children = (
+				655E927D130082A6003D0CB8 /* Base64Transcoder.c */,
+				655E927E130082A6003D0CB8 /* Base64Transcoder.h */,
+			);
+			path = Crypto;
+			sourceTree = "<group>";
+		};
+		655E929D130082A6003D0CB8 /* parser */ = {
+			isa = PBXGroup;
+			children = (
+				655E929E130082A6003D0CB8 /* jsonFramework */,
+			);
+			path = parser;
+			sourceTree = "<group>";
+		};
+		655E929E130082A6003D0CB8 /* jsonFramework */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = jsonFramework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -167,6 +341,28 @@
 			files = (
 				655E925A13006FC6003D0CB8 /* main.m in Sources */,
 				655E926013006FC6003D0CB8 /* SinaTApiAppDelegate.m in Sources */,
+				655E92A4130082A6003D0CB8 /* DirectMessage.m in Sources */,
+				655E92A5130082A6003D0CB8 /* Status.m in Sources */,
+				655E92A6130082A6003D0CB8 /* STComment.m in Sources */,
+				655E92A7130082A6003D0CB8 /* User.m in Sources */,
+				655E92A8130082A6003D0CB8 /* Constants.m in Sources */,
+				655E92A9130082A6003D0CB8 /* Base64Transcoder.c in Sources */,
+				655E92AA130082A6003D0CB8 /* NSMutableURLRequest+Parameters.m in Sources */,
+				655E92AB130082A6003D0CB8 /* NSString+URLEncoding.m in Sources */,
+				655E92AC130082A6003D0CB8 /* NSURL+Base.m in Sources */,
+				655E92AD130082A6003D0CB8 /* OAAsynchronousDataFetcher.m in Sources */,
+				655E92AE130082A6003D0CB8 /* OAConsumer.m in Sources */,
+				655E92AF130082A6003D0CB8 /* OADataFetcher.m in Sources */,
+				655E92B0130082A6003D0CB8 /* OAHMAC_SHA1SignatureProvider.m in Sources */,
+				655E92B1130082A6003D0CB8 /* OAMutableURLRequest.m in Sources */,
+				655E92B2130082A6003D0CB8 /* OAPlaintextSignatureProvider.m in Sources */,
+				655E92B3130082A6003D0CB8 /* OARequestParameter.m in Sources */,
+				655E92B4130082A6003D0CB8 /* OAServiceTicket.m in Sources */,
+				655E92B5130082A6003D0CB8 /* OAToken.m in Sources */,
+				655E92B6130082A6003D0CB8 /* OAToken_KeychainExtensions.m in Sources */,
+				655E92B7130082A6003D0CB8 /* OAuthBase.m in Sources */,
+				655E92B8130082A6003D0CB8 /* SinaApiParser.m in Sources */,
+				655E92B9130082A6003D0CB8 /* SinaApiRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +430,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/SinaTSDK\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -251,6 +451,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/SinaTSDK\"",
+				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SinaTApi/SinaTApi-Prefix.pch";
