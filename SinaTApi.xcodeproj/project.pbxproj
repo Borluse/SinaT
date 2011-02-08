@@ -36,7 +36,22 @@
 		655E92B8130082A6003D0CB8 /* SinaApiParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E92A0130082A6003D0CB8 /* SinaApiParser.m */; };
 		655E92B9130082A6003D0CB8 /* SinaApiRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 655E92A2130082A6003D0CB8 /* SinaApiRequest.m */; };
 		655E92BA130082A6003D0CB8 /* YAJL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 655E92A3130082A6003D0CB8 /* YAJL.framework */; };
+		6588136D1300857700EBA3D8 /* YAJL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 655E92A3130082A6003D0CB8 /* YAJL.framework */; };
+		65F64EB01300846A004690BB /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F64EAF1300846A004690BB /* Security.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6588136B1300855F00EBA3D8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6588136D1300857700EBA3D8 /* YAJL.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		655E924813006FC6003D0CB8 /* SinaTApi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinaTApi.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,7 +113,8 @@
 		655E92A0130082A6003D0CB8 /* SinaApiParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaApiParser.m; sourceTree = "<group>"; };
 		655E92A1130082A6003D0CB8 /* SinaApiRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinaApiRequest.h; sourceTree = "<group>"; };
 		655E92A2130082A6003D0CB8 /* SinaApiRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinaApiRequest.m; sourceTree = "<group>"; };
-		655E92A3130082A6003D0CB8 /* YAJL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YAJL.framework; sourceTree = "<group>"; };
+		655E92A3130082A6003D0CB8 /* YAJL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = YAJL.framework; path = SinaTSDK/YAJL.framework; sourceTree = "<group>"; };
+		65F64EAF1300846A004690BB /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65F64EB01300846A004690BB /* Security.framework in Frameworks */,
 				655E924D13006FC6003D0CB8 /* Cocoa.framework in Frameworks */,
 				655E92BA130082A6003D0CB8 /* YAJL.framework in Frameworks */,
 			);
@@ -117,6 +134,7 @@
 		655E923D13006FC5003D0CB8 = {
 			isa = PBXGroup;
 			children = (
+				65F64EAF1300846A004690BB /* Security.framework */,
 				655E9269130082A6003D0CB8 /* SinaTSDK */,
 				655E925213006FC6003D0CB8 /* SinaTApi */,
 				655E924B13006FC6003D0CB8 /* Frameworks */,
@@ -135,6 +153,7 @@
 		655E924B13006FC6003D0CB8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				655E92A3130082A6003D0CB8 /* YAJL.framework */,
 				655E924C13006FC6003D0CB8 /* Cocoa.framework */,
 				655E924E13006FC6003D0CB8 /* Other Frameworks */,
 			);
@@ -187,7 +206,6 @@
 				655E92A0130082A6003D0CB8 /* SinaApiParser.m */,
 				655E92A1130082A6003D0CB8 /* SinaApiRequest.h */,
 				655E92A2130082A6003D0CB8 /* SinaApiRequest.m */,
-				655E92A3130082A6003D0CB8 /* YAJL.framework */,
 			);
 			path = SinaTSDK;
 			sourceTree = "<group>";
@@ -283,6 +301,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 655E926613006FC6003D0CB8 /* Build configuration list for PBXNativeTarget "SinaTApi" */;
 			buildPhases = (
+				6588136B1300855F00EBA3D8 /* CopyFiles */,
 				655E924413006FC5003D0CB8 /* Sources */,
 				655E924513006FC5003D0CB8 /* Frameworks */,
 				655E924613006FC5003D0CB8 /* Resources */,
@@ -440,6 +459,7 @@
 				GCC_PREFIX_HEADER = "SinaTApi/SinaTApi-Prefix.pch";
 				INFOPLIST_FILE = "SinaTApi/SinaTApi-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -460,6 +480,7 @@
 				GCC_PREFIX_HEADER = "SinaTApi/SinaTApi-Prefix.pch";
 				INFOPLIST_FILE = "SinaTApi/SinaTApi-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -484,6 +505,7 @@
 				655E926813006FC6003D0CB8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
