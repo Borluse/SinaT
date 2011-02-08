@@ -36,10 +36,11 @@
 
 -(NSMutableArray *)parserCommentWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data;
 -(STComment *)parserACommentWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data;
+
 -(NSMutableArray *)parserDirecteMessageWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data;
+-(DirectMessage *)parserADirecteMessageWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data;
 
 -(NSMutableArray *) parserUsersWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data;
-
 -(User *) parserAUserWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data;
 
 -(void)insertDatasIntoStatus:(Status *)aStatus withArray:(NSArray *)datas;

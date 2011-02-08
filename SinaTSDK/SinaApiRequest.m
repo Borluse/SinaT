@@ -580,7 +580,7 @@
 	
 	
 }
--(void) retrieveDirect_messagesSentWithSinceID:(NSString *)sid  MaxID:(NSString *)max_ID Count:(NSNumber *)count Page:(NSNumber *)page{
+-(NSMutableArray *) retrieveDirect_messagesSentWithSinceID:(NSString *)sid  MaxID:(NSString *)max_ID Count:(NSNumber *)count Page:(NSNumber *)page{
 	NSMutableDictionary *parametre = [[NSMutableDictionary alloc] init];
 	[self addParametreInDict:parametre withKey:@"since_id" andValue:sid];
 	[self addParametreInDict:parametre withKey:@"max_id" andValue:max_ID];
@@ -594,10 +594,10 @@
 	
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserDirecteMessageWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
--(void) retrieveDirect_messagesNewWithUserID:(NSString *)userID text:(NSString *)text{
+-(DirectMessage *) retrieveDirect_messagesNewWithUserID:(NSString *)userID text:(NSString *)text{
 	if (userID == nil || text == nil) {
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"userID or text is null" userInfo:nil];
 		@throw err;
@@ -610,7 +610,7 @@
 	
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserADirecteMessageWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
 -(void) retrieveDirect_messagesDestroyWithID:(NSString *)dmID{

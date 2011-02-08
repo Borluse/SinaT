@@ -122,6 +122,20 @@
 
     }
 }
+-(DirectMessage *)parserADirecteMessageWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data{
+    if (ticket.didSucceed){
+        NSArray * jsonData = [data yajl_JSON];
+        return [self createDirectMessageWithArray:jsonData];
+    }
+    else{
+        NSString *responseBody = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        //        NSLog(@"%@",responseBody);
+        NSException * err = [NSException exceptionWithName:@"请求API失败, 位置：parserADirecteMessageWithTicket" reason:responseBody userInfo:nil];
+        @throw err;
+        return nil;
+        
+    }
+}
 -(NSMutableArray *) parserUsersWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data{
     if (ticket.didSucceed){
         NSArray * jsonData = [data yajl_JSON];
