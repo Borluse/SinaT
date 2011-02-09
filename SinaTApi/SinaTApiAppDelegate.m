@@ -38,7 +38,7 @@
 	@try {
     	//	OAToken * test = auth.accessToken;
 	//	NSLog(@"%@", test);
-//	NSLog(@"%@",[sinaAPI retrieveStatusesPublic_timelineWithCount:[NSNumber numberWithInt:2]]);
+	NSLog(@"%@",[sinaAPI retrieveStatusesPublic_timelineWithCount:[NSNumber numberWithInt:2]]);
 //	NSLog(@"%@",[sinaAPI retrieveStatusesFriends_timelineWithSinceID:nil MaxID:nil Count:[NSNumber numberWithInt:5] Page:nil feature:nil]);
 //	NSLog(@"%@",[sinaAPI retrieveStatusesUser_timelineWithUserID:nil screen_name:nil since_id:nil MaxID:nil Count:nil Page:nil feature:nil]);
 //  NSLog(@"%@",[sinaAPI retrieveStatusesMentionsWithSince_id:nil MaxID:nil Count:nil Page:nil]);

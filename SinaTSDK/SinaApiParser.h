@@ -31,17 +31,19 @@
 
 
 -(void)sinaAPIStatusesPublic_timelineTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data;
--(NSMutableArray *)parserStatusesWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data;
+-(NSArray *)parserStatusesWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data;
 -(Status *)parserAStatusWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data;
 
--(NSMutableArray *)parserCommentWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data;
+-(NSArray *)parserCommentWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data;
 -(STComment *)parserACommentWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data;
 
--(NSMutableArray *)parserDirecteMessageWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data;
+-(NSArray *)parserDirecteMessageWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data;
 -(DirectMessage *)parserADirecteMessageWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data;
 
--(NSMutableArray *) parserUsersWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data;
+-(NSArray *) parserUsersWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data;
 -(User *) parserAUserWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data;
+
+-(NSArray *) parserOtherTypesWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data;
 
 -(void)insertDatasIntoStatus:(Status *)aStatus withArray:(NSArray *)datas;
 -(void)insertDatasIntoUser:(User *)anUser withArray:(NSArray *)datas;

@@ -49,7 +49,7 @@
 	}
  */
 	//[request prepare];
-	NSLog(@"%@",[request _signatureBaseString]);
+    //	NSLog(@"%@",[request _signatureBaseString]);
 	return request;
 }
 -(OAMutableURLRequest *) prepareRequestWithURL:(NSString *) anUrl 
@@ -104,7 +104,7 @@
 //	[request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
 	[request setHTTPMethod:@"POST"];
 	//[request prepare];
-	NSLog(@"%@",[request _signatureBaseString]);
+    //	NSLog(@"%@",[request _signatureBaseString]);
 	return request;
 }
 -(OAMutableURLRequest *) preparePutRequestWithURL:(NSString *) anUrl 
@@ -126,7 +126,7 @@
 			[temp appendString:@"&"];
 			position++;
 		}
-		 body = [temp dataUsingEncoding:NSUTF8StringEncoding];
+		 body = [NSMutableData dataWithData:[temp dataUsingEncoding:NSUTF8StringEncoding]];
 	}
 	else{
 		body = [[NSMutableData alloc] init];
@@ -210,7 +210,7 @@
 
 	return request;
 }
--(void) requestToken{
+-(void) requestAToken{
 	OAMutableURLRequest * request = [self prepareRequestWithURL:@"http://api.t.sina.com.cn/oauth/request_token"
 													   useToken:nil
 												  useHttpMethod:nil
@@ -280,8 +280,8 @@
 	//[request setOAuthParameterName:@"user_id" withValue:@"1390984450"];
 	[request prepare];
 	
-	NSLog(@"%@", [request _signatureBaseString]);
-    OADataFetcher *fetcher = [[OADataFetcher alloc] init];
+    //	NSLog(@"%@", [request _signatureBaseString]);
+    
 	
     [fetcher fetchDataWithRequest:request
                          delegate:self

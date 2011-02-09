@@ -20,7 +20,7 @@
 	}
 	return self;
 }
--(NSMutableArray *) retrieveStatusesPublic_timelineWithCount:(NSNumber *)count{
+-(NSArray *) retrieveStatusesPublic_timelineWithCount:(NSNumber *)count{
 	NSMutableDictionary * parametre = [[NSMutableDictionary alloc] init];
 	[self addParametreInDict:parametre withKey:@"count" andValue:count]; 
 	
@@ -35,7 +35,7 @@
 	
 
 }
--(NSMutableArray *) retrieveStatusesFriends_timelineWithSinceID:(NSString *)sid 
+-(NSArray *) retrieveStatusesFriends_timelineWithSinceID:(NSString *)sid 
 											  MaxID:(NSString *)max_ID 
 											  Count:(NSNumber *)count 
 											   Page:(NSNumber *)page 
@@ -58,7 +58,7 @@
 	
 }
 
--(NSMutableArray *) retrieveStatusesUser_timelineWithUserID:(NSString *)UID 
+-(NSArray *) retrieveStatusesUser_timelineWithUserID:(NSString *)UID 
 									screen_name:(NSString *)sname 
 									   since_id:(NSString *)sid  
 										  MaxID:(NSString *)max_ID
@@ -86,7 +86,7 @@
 	
 }
 
--(NSMutableArray *) retrieveStatusesMentionsWithSince_id:(NSString *)sid
+-(NSArray *) retrieveStatusesMentionsWithSince_id:(NSString *)sid
 									   MaxID:(NSString *)max_ID
 									   Count:(NSNumber *)count 
 										Page:(NSNumber *)page{
@@ -108,7 +108,7 @@
 	
 }
 
--(NSMutableArray *) retrieveStatusesComment_timelineWithSinceID:(NSString *)sid  
+-(NSArray *) retrieveStatusesComment_timelineWithSinceID:(NSString *)sid  
 											  MaxID:(NSString *)max_ID 
 											  Count:(NSNumber *)count 
 											   Page:(NSNumber *)page{
@@ -130,7 +130,7 @@
 	
 }
 
--(NSMutableArray *) retrieveStatusesCommentsbymeWithSinceID:(NSString *)sid  
+-(NSArray *) retrieveStatusesCommentsbymeWithSinceID:(NSString *)sid  
 										  MaxID:(NSString *)max_ID 
 										  Count:(NSNumber *)count 
 										   Page:(NSNumber *)page{
@@ -151,7 +151,7 @@
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 	
 }
--(NSMutableArray *) retrieveStatusesCommentstomeWithSinceID:(NSString *)sid  
+-(NSArray *) retrieveStatusesCommentstomeWithSinceID:(NSString *)sid  
 										  MaxID:(NSString *)max_ID 
 										  Count:(NSNumber *)count 
 										   Page:(NSNumber *)page{
@@ -171,7 +171,7 @@
 				didFinishSelector:@selector(parserCommentWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
--(NSMutableArray *) retrieveStatusesCommentsWithID:(NSString *)weiboid
+-(NSArray *) retrieveStatusesCommentsWithID:(NSString *)weiboid
 								 Count:(NSNumber *)count 
 								  Page:(NSNumber *)page{
 	if (weiboid == nil){
@@ -194,7 +194,7 @@
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 	
 }
--(void) retrieveStatusesCountsWithids:(NSString *)ids{
+-(NSArray *) retrieveStatusesCountsWithids:(NSString *)ids{
 	if (ids == nil){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"ids should not be nil" userInfo:nil];
 		@throw err;
@@ -208,10 +208,10 @@
 	
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
--(NSMutableArray *) retrieveStatusesRepost_timelineWithID:(NSString *)weiboid 
+-(NSArray *) retrieveStatusesRepost_timelineWithID:(NSString *)weiboid 
 									 since_id:(NSString *)sid  
 										MaxID:(NSString *)max_ID
 										Count:(NSNumber *)count 
@@ -238,7 +238,7 @@
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 	
 }
--(NSMutableArray *) retrieveStatusesRepostbymeWithID:(NSString *)weiboid
+-(NSArray *) retrieveStatusesRepostbymeWithID:(NSString *)weiboid
 								since_id:(NSString *)sid  
 								   MaxID:(NSString *)max_ID
 								   Count:(NSNumber *)count 
@@ -265,7 +265,7 @@
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 	
 }
--(void) retrieveStatusesUnreadWith_new_status:(NSNumber *)with_new_status since_id:(NSString *)sid{
+-(NSArray *) retrieveStatusesUnreadWith_new_status:(NSNumber *)with_new_status since_id:(NSString *)sid{
 	NSMutableDictionary *parametre = [[NSMutableDictionary alloc] init];
 	[self addParametreInDict:parametre withKey:@"with_new_status" andValue:with_new_status];
 	[self addParametreInDict:parametre withKey:@"since_id" andValue:sid];
@@ -276,10 +276,10 @@
 	
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
--(void) retrieveStatusesResetcountWithType:(NSNumber *)type{
+-(NSArray *) retrieveStatusesResetcountWithType:(NSNumber *)type{
 	NSMutableDictionary *parametre = [[NSMutableDictionary alloc] init];
 	[self addParametreInDict:parametre withKey:@"type" andValue:type];
 	
@@ -289,7 +289,7 @@
 	
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 	
 }
@@ -437,7 +437,7 @@
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 	
 }
--(NSMutableArray *) retrieveStatusesComment_destroyWithCommentIDS:(NSArray *)cids{
+-(NSArray *) retrieveStatusesComment_destroyWithCommentIDS:(NSArray *)cids{
 	if (cids == nil){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"comment Id is null" userInfo:nil];
 		@throw err;
@@ -492,7 +492,7 @@
 				didFinishSelector:@selector(parserAUserWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
--(NSMutableArray *) retrieveStatusesFriendsWithUserID:(NSString *)userID screen_name:(NSString *)screen_name cursor:(NSNumber *)cursor count:(NSNumber *)count{
+-(NSArray *) retrieveStatusesFriendsWithUserID:(NSString *)userID screen_name:(NSString *)screen_name cursor:(NSNumber *)cursor count:(NSNumber *)count{
 	NSMutableDictionary *parametre = [[NSMutableDictionary alloc] init];
 	[self addParametreInDict:parametre withKey:@"user_id" andValue:userID];
 	[self addParametreInDict:parametre withKey:@"screen_name" andValue:screen_name];
@@ -506,7 +506,7 @@
 				didFinishSelector:@selector(parserUsersWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];	
 }
--(NSMutableArray *) retrieveStatusesFollowersWithUserID:(NSString *)userID screen_name:(NSString *)screen_name cursor:(NSNumber *)cursor count:(NSNumber *)count{
+-(NSArray *) retrieveStatusesFollowersWithUserID:(NSString *)userID screen_name:(NSString *)screen_name cursor:(NSNumber *)cursor count:(NSNumber *)count{
 	NSMutableDictionary *parametre = [[NSMutableDictionary alloc] init];
 	[self addParametreInDict:parametre withKey:@"user_id" andValue:userID];
 	[self addParametreInDict:parametre withKey:@"screen_name" andValue:screen_name];
@@ -521,7 +521,7 @@
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];	
 	
 }
--(NSMutableArray *) retrieveUsersHotWithCategory:(NSString *)category{
+-(NSArray *) retrieveUsersHotWithCategory:(NSString *)category{
 	NSMutableDictionary *param = [[NSMutableDictionary alloc] init];
 	[self addParametreInDict:param withKey:@"category" andValue:category];
 	OAMutableURLRequest *request = [self prepareGetRequestWithURL:@"http://api.t.sina.com.cn/users/hot.json" withParametreDict:param];
@@ -547,7 +547,7 @@
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];		
 	
 }
--(NSMutableArray *) retrieveUsersSuggestionsWith_reason:(NSNumber *)with_reason{
+-(NSArray *) retrieveUsersSuggestionsWith_reason:(NSNumber *)with_reason{
 	NSMutableDictionary *parametre = [[NSMutableDictionary alloc] init];
 	[self addParametreInDict:parametre withKey:@"with_reason" andValue:with_reason];
 	
@@ -561,7 +561,7 @@
 
 #pragma mark -
 #pragma mark APICategory : Direct_messages
--(NSMutableArray *) retrieveDirect_messagesWithSinceID:(NSString *)sid  MaxID:(NSString *)max_ID Count:(NSNumber *)count Page:(NSNumber *)page{
+-(NSArray *) retrieveDirect_messagesWithSinceID:(NSString *)sid  MaxID:(NSString *)max_ID Count:(NSNumber *)count Page:(NSNumber *)page{
 	NSMutableDictionary *parametre = [[NSMutableDictionary alloc] init];
 	[self addParametreInDict:parametre withKey:@"since_id" andValue:sid];
 	[self addParametreInDict:parametre withKey:@"max_id" andValue:max_ID];
@@ -580,7 +580,7 @@
 	
 	
 }
--(NSMutableArray *) retrieveDirect_messagesSentWithSinceID:(NSString *)sid  MaxID:(NSString *)max_ID Count:(NSNumber *)count Page:(NSNumber *)page{
+-(NSArray *) retrieveDirect_messagesSentWithSinceID:(NSString *)sid  MaxID:(NSString *)max_ID Count:(NSNumber *)count Page:(NSNumber *)page{
 	NSMutableDictionary *parametre = [[NSMutableDictionary alloc] init];
 	[self addParametreInDict:parametre withKey:@"since_id" andValue:sid];
 	[self addParametreInDict:parametre withKey:@"max_id" andValue:max_ID];
@@ -625,7 +625,7 @@
 				didFinishSelector:@selector(parserADirecteMessageWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
--(NSMutableArray *) retrieveDirect_messagesDestroy_batchWithIDS:(NSArray *)dmids{
+-(NSArray *) retrieveDirect_messagesDestroy_batchWithIDS:(NSArray *)dmids{
 	if (dmids == nil){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"direct message Ids are null" userInfo:nil];
 		@throw err;
@@ -643,7 +643,7 @@
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
 /*
--(void) retrieveDirect_messagesUserlistWithCount:(NSNumber *)count cursor:(NSNumber *)cursor{
+-(NSArray *) retrieveDirect_messagesUserlistWithCount:(NSNumber *)count cursor:(NSNumber *)cursor{
 	NSMutableDictionary *parametre = [[NSMutableDictionary alloc] init];
 	[self addParametreInDict:parametre withKey:@"count" andValue:count];
 	[self addParametreInDict:parametre withKey:@"cursor" andValue:cursor];
@@ -651,7 +651,7 @@
 	OAMutableURLRequest *request = [self prepareGetRequestWithURL:@"http://api.t.sina.com.cn/direct_messages/userlist.json" withParametreDict:parametre];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];	
 }
 */
@@ -690,7 +690,7 @@
 				didFinishSelector:@selector(parserAUserWithTicket:didFinishWithData::didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];	
 }
--(void) retrieveFriendsshipsExistsWithUserAID:(NSString *)userA userBID:(NSString *)userB{
+-(NSArray *) retrieveFriendsshipsExistsWithUserAID:(NSString *)userA userBID:(NSString *)userB{
 	if (userA == nil || userB == nil){
 		NSException * err = [NSException exceptionWithName:@"InvalideParameter" reason:@"userA and userB are null" userInfo:nil];
 		@throw err;
@@ -706,7 +706,7 @@
 				didFinishSelector:@selector(parse:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];		
 }
--(void) retrieveFriendsshipsShowWithUserAID:(NSString *)userAID userAName:(NSString *)userAName userBID:(NSString *)userBID userBName:(NSString *)userBName{
+-(NSArray *) retrieveFriendsshipsShowWithUserAID:(NSString *)userAID userAName:(NSString *)userAName userBID:(NSString *)userBID userBName:(NSString *)userBName{
 	if (userBID == nil && userBName == nil){
 		NSException * err = [NSException exceptionWithName:@"InvalideParameter" reason:@"userB ID and name are null" userInfo:nil];
 		@throw err;
@@ -720,13 +720,13 @@
 	OAMutableURLRequest *request = [self prepareGetRequestWithURL:@"http://api.t.sina.com.cn/friendships/show.json" withParametreDict:parametre];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];		
 }
 
 #pragma mark -
 #pragma mark APICategory : Trends
--(void) retrieveTrendsWithUserID:(NSString *)userID{
+-(NSArray *) retrieveTrendsWithUserID:(NSString *)userID{
 	if (userID == nil){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"userID shoudn't be null" userInfo:nil];
 		@throw err;
@@ -734,11 +734,11 @@
 	OAMutableURLRequest *request = [self prepareGetRequestWithURL:@"http://api.t.sina.com.cn/trends.json" withParametreDict:[NSDictionary dictionaryWithObject:userID forKey:@"user_id"]];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];		
 	
 }
--(NSMutableArray *) retrieveTrendsStatusesWithTrend_name:(NSString *)trend_name{
+-(NSArray *) retrieveTrendsStatusesWithTrend_name:(NSString *)trend_name{
 	if(trend_name == nil){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"trend name shoudn't be null" userInfo:nil];
 		@throw err;
@@ -749,7 +749,7 @@
 				didFinishSelector:@selector(parserStatusesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];		
 }
--(void) retrieveTrendsFollowWithTrend_name:(NSString *)trend_name{
+-(NSArray *) retrieveTrendsFollowWithTrend_name:(NSString *)trend_name{
 	if(trend_name == nil){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"trend name shoudn't be null" userInfo:nil];
 		@throw err;
@@ -757,10 +757,10 @@
 	OAMutableURLRequest *request = [self preparePostRequestWithURL:@"http://api.t.sina.com.cn/trends/follow.json" withParametreDict:[NSDictionary dictionaryWithObject:trend_name forKey:@"trend_name"]];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];	
 }
--(void) retrieveTrendsDestroyWithTrend_id:(NSString *)trendID{
+-(NSArray *) retrieveTrendsDestroyWithTrend_id:(NSString *)trendID{
 	if(trendID == nil){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"trend id shoudn't be null" userInfo:nil];
 		@throw err;
@@ -770,36 +770,36 @@
 												 useHttpMethod:@"DELETE" withParametreDict:nil];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];		
 }
--(void) retrieveTrendsHourly{
+-(NSArray *) retrieveTrendsHourly{
 	OAMutableURLRequest *request = [self prepareGetRequestWithURL:@"http://api.t.sina.com.cn/trends/hourly.json" withParametreDict:nil];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];		
 }
--(void) retrieveTrendsDaily{
+-(NSArray *) retrieveTrendsDaily{
 	OAMutableURLRequest *request = [self prepareGetRequestWithURL:@"http://api.t.sina.com.cn/trends/daily.json" withParametreDict:nil];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];		
 	
 }
--(void) retrieveTrendsWeekly{
+-(NSArray *) retrieveTrendsWeekly{
 	OAMutableURLRequest *request = [self prepareGetRequestWithURL:@"http://api.t.sina.com.cn/trends/weekly.json" withParametreDict:nil];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];		
 	
 }
 
 #pragma mark -
 #pragma mark API category : social graph
--(void) retrieveFriendsIdsWithUserID:(NSString *)userID screen_name:(NSString *)screen_name count:(NSNumber *)count cursor:(NSNumber *)cursor{
+-(NSArray *) retrieveFriendsIdsWithUserID:(NSString *)userID screen_name:(NSString *)screen_name count:(NSNumber *)count cursor:(NSNumber *)cursor{
 	if (userID == nil && screen_name == nil ){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"user_id and screen_name are null" userInfo:nil];
 		@throw err;
@@ -813,10 +813,10 @@
 	OAMutableURLRequest * request = [self prepareGetRequestWithURL:@"http://api.t.sina.com.cn/friends/ids.json" withParametreDict:parameter];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];		
 }
--(void) retrieveFollowersIdsWithUserID:(NSString *)userID screen_name:(NSString *)screen_name count:(NSNumber *)count cursor:(NSNumber *)cursor{
+-(NSArray *) retrieveFollowersIdsWithUserID:(NSString *)userID screen_name:(NSString *)screen_name count:(NSNumber *)count cursor:(NSNumber *)cursor{
 	if (userID == nil && screen_name == nil ){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"user_id and screen_name are null" userInfo:nil];
 		@throw err;
@@ -830,7 +830,7 @@
 	OAMutableURLRequest * request = [self prepareGetRequestWithURL:@"http://api.t.sina.com.cn/followers/ids.json" withParametreDict:parameter];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];		
 	
 }
@@ -851,11 +851,11 @@
 				didFinishSelector:@selector(parserAUserWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];	
 }
--(void) retrieveAccountGet_privacy{
+-(NSArray *) retrieveAccountGet_privacy{
 	OAMutableURLRequest * request = [self prepareGetRequestWithURL:@"http://api.t.sina.com.cn/account/get_privacy.json" withParametreDict:nil];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 	
 }
@@ -892,7 +892,7 @@
 				didFinishSelector:@selector(parserAUserWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
--(void) retrieveBlocksExistWithUser_id:(NSString *) userID screen_name :(NSString *)screen_name{
+-(NSArray *) retrieveBlocksExistWithUser_id:(NSString *) userID screen_name :(NSString *)screen_name{
 	if (userID == nil && screen_name == nil){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"userID and screen_name are null" userInfo:nil];
 		@throw err;
@@ -904,11 +904,11 @@
 	OAMutableURLRequest *request = [self prepareGetRequestWithURL:@"http://api.t.sina.com.cn/blocks/exists.json" withParametreDict:parameter];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 	
 }
--(NSMutableArray *) retrieveBlocksBlockingWithPage:(NSNumber *) page count:(NSNumber *) count{
+-(NSArray *) retrieveBlocksBlockingWithPage:(NSNumber *) page count:(NSNumber *) count{
 	NSMutableDictionary * parameter = [[NSMutableDictionary alloc] init];
 	[self addParametreInDict:parameter withKey:@"page" andValue:page];
 	[self addParametreInDict:parameter withKey:@"count" andValue:count];
@@ -920,7 +920,7 @@
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 	
 }
--(void) retrieveBlocksBlockingIdsWithPage:(NSNumber *)page count:(NSNumber *)count{
+-(NSArray *) retrieveBlocksBlockingIdsWithPage:(NSNumber *)page count:(NSNumber *)count{
 	NSMutableDictionary * parameter = [[NSMutableDictionary alloc] init];
 	[self addParametreInDict:parameter withKey:@"page" andValue:page];
 	[self addParametreInDict:parameter withKey:@"count" andValue:count];
@@ -928,14 +928,14 @@
 	OAMutableURLRequest *request = [self prepareGetRequestWithURL:@"http://api.t.sina.com.cn/blocks/blocking.json" withParametreDict:parameter];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 	
 }
 
 #pragma mark -
 #pragma mark API category : tags
--(void) retrieveTagsWithUser_id:(NSString *) userID count : (NSNumber *)count page : (NSNumber *)page{
+-(NSArray *) retrieveTagsWithUser_id:(NSString *) userID count : (NSNumber *)count page : (NSNumber *)page{
 	if (userID == nil){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"userID is null" userInfo:nil];
 		@throw err;
@@ -948,11 +948,11 @@
 	OAMutableURLRequest *request = [self prepareGetRequestWithURL:@"http://api.t.sina.com.cn/tags.json" withParametreDict:parameter];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 	
 }
--(void) retrieveTagsCreateWithTags:(NSString *) tags{
+-(NSArray *) retrieveTagsCreateWithTags:(NSString *) tags{
 	if (tags == nil){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"tags is null" userInfo:nil];
 		@throw err;
@@ -960,11 +960,11 @@
 	OAMutableURLRequest *request = [self preparePostRequestWithURL:@"http://api.t.sina.com.cn/tags/create.json" withParametreDict:[NSDictionary dictionaryWithObject:tags forKey:@"tags"]];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 	
 }
--(void) retrieveTagsSuggestionsWithCount : (NSNumber *)count page : (NSNumber *)page{
+-(NSArray *) retrieveTagsSuggestionsWithCount : (NSNumber *)count page : (NSNumber *)page{
 	NSMutableDictionary * parameter = [[NSMutableDictionary alloc] init];
 	[self addParametreInDict:parameter withKey:@"page" andValue:page];
 	[self addParametreInDict:parameter withKey:@"count" andValue:count];
@@ -972,11 +972,11 @@
 	OAMutableURLRequest *request = [self prepareGetRequestWithURL:@"http://api.t.sina.com.cn/tags/suggestions.json" withParametreDict:parameter];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 	
 }
--(void) retrieveTagsDestroyWithTag_id :(NSString *) tag_id{
+-(NSArray *) retrieveTagsDestroyWithTag_id :(NSString *) tag_id{
 	if (tag_id == nil){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"tags is null" userInfo:nil];
 		@throw err;
@@ -985,10 +985,10 @@
 												  useHttpMethod:@"DELETE" withParametreDict:nil];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
--(void) retrieveTagsDestroy_BatchWithIds:(NSArray *)ids{
+-(NSArray *) retrieveTagsDestroy_BatchWithIds:(NSArray *)ids{
 	if (ids == nil){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"tags is null" userInfo:nil];
 		@throw err;	
@@ -998,7 +998,7 @@
 												  useHttpMethod:@"DELETE" withParametreDict:nil];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
 #pragma mark -
@@ -1011,12 +1011,12 @@
 				didFinishSelector:@selector(parserAUserWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
--(void) retrieveAccountRate_limit_status{
+-(NSArray *) retrieveAccountRate_limit_status{
 	OAMutableURLRequest * request = [self prepareGetRequestWithURL:@"http://api.t.sina.com.cn/account/rate_limit_status.json" withParametreDict:nil];
 	
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserOtherTypesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];	
 }
 -(User *) retrieveAccountEnd_session{
@@ -1065,7 +1065,7 @@
 
 #pragma mark -
 #pragma mark API Category : Favorite
--(NSMutableArray *) retrieveFavoritesWithPage:(NSNumber *) page{
+-(NSArray *) retrieveFavoritesWithPage:(NSNumber *) page{
     NSMutableDictionary * parameter = [[NSMutableDictionary alloc] init];
     [self addParametreInDict:parameter withKey:@"page" andValue:page];
 
@@ -1106,7 +1106,7 @@
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
 
--(NSMutableArray *) retrieveFavoritesDestroy_batchWithIds:(NSArray *)ids{
+-(NSArray *) retrieveFavoritesDestroy_batchWithIds:(NSArray *)ids{
     if ([ids count] == 0){
         NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"weiboID shoudn't be null" userInfo:nil];
 		@throw err;	

@@ -14,7 +14,7 @@
 @synthesize uid;
 @synthesize name;
 @synthesize screen_name;
-@synthesize description;
+@synthesize usrDesc;
 @synthesize profile_image_url;
 @synthesize url;
 //@synthesize isProtected;
@@ -60,7 +60,7 @@
 	[uid release];
 	[name release];
 	[screen_name release];
-	[description release];
+	[usrDesc release];
 	[profile_image_url release];
 	[url release];
 	[created_at release];

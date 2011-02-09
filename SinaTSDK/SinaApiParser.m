@@ -43,7 +43,7 @@
     }
 }
 
--(NSMutableArray *)parserStatusesWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data{
+-(NSArray *)parserStatusesWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data{
     if (ticket.didSucceed){
         NSArray * jsonData = [data yajl_JSON];
         NSMutableArray * statues = [[NSMutableArray alloc]init];
@@ -62,7 +62,7 @@
     }
 }
 
--(NSMutableArray *)parserCommentWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data{
+-(NSArray *)parserCommentWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data{
     if (ticket.didSucceed){
         NSArray * jsonData = [data yajl_JSON];
         NSMutableArray * comment = [[NSMutableArray alloc]init];
@@ -100,7 +100,7 @@
 }
 
 
--(NSMutableArray *)parserDirecteMessageWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data{
+-(NSArray *)parserDirecteMessageWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data{
     if (ticket.didSucceed){
         NSArray * jsonData = [data yajl_JSON];
         NSMutableArray * msgs = [[NSMutableArray alloc] init];
@@ -136,7 +136,7 @@
         
     }
 }
--(NSMutableArray *) parserUsersWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data{
+-(NSArray *) parserUsersWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data{
     if (ticket.didSucceed){
         NSArray * jsonData = [data yajl_JSON];
         NSMutableArray * usrs = [[NSMutableArray alloc] init];
@@ -173,6 +173,20 @@
             
         }
 
+}
+
+-(NSArray *) parserOtherTypesWithTicket:(OAServiceTicket *)ticket didFinishWithData: (NSData *)data{
+    if (ticket.didSucceed){
+        NSArray * jsonData = [data yajl_JSON];
+        return jsonData;
+    }
+    else{
+        NSString *responseBody = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        //        NSLog(@"%@",responseBody);
+        NSException * err = [NSException exceptionWithName:@"请求API失败, 位置：parserOtherTypesWithTicket" reason:responseBody userInfo:nil];
+        @throw err;
+        return nil;
+    }
 }
 
 
@@ -267,7 +281,7 @@
 	 */
 	temp = [datas valueForKey:@"description"];
 	if (![temp isEqualToString:@""]){
-		[anUser setDescription:[temp URLDecodedString]];
+		[anUser setUsrDesc:[temp URLDecodedString]];
 	}
 	
 	/*
@@ -297,6 +311,7 @@
 	 */
 	temp = [datas valueForKey:@"friends_count"];
 	[anUser setFriends_count:temp];
+    //NSLog(@"%@",[anUser friends_count]);
 	
 	/*
 	 *	Add gender
@@ -461,6 +476,7 @@
 	if (arr != nil){
         //		NSLog(@"status in user");
 		Status * status = [self createStatusWithArray:arr];
+        [usr setStatus:status];
 	}
 	return usr;
 }

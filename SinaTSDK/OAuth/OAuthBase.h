@@ -55,12 +55,15 @@ extern NSString * const APPSECRET;
 
 -(NSMutableURLRequest *) preparePostPicWithURL:(NSString *)anURL pathPic:(NSString *)path PicName:(NSString *)picname parametre:(NSDictionary *)dictParameter;
 
--(void) requestToken;
+-(void) requestAToken;
 -(void) requestTokenTicket:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data;
 -(void) requestAccessToken;
 -(BOOL) authorizeApp;
 -(void) requestUserInfo;
 
+
+- (NSString *)_generateTimestamp;
+- (NSString *)_generateNonce;
 //-(void) executeRequest;
 
 @end

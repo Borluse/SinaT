@@ -17,7 +17,7 @@
 	NSString * province;          //Code of province *
 	NSInteger  city;              //Code of City
 	NSString * location;          //Adresse
-	NSString * description;       //self descrpition
+	NSString * usrDesc;       //self descrpition
 	NSString * url;	              //Url
 	NSString * profile_image_url; //Url of image
 	NSString * domain;            //self Url
@@ -54,7 +54,7 @@
 @property (readwrite,retain) NSString * uid;
 @property (readwrite,retain) NSString * name;
 @property (readwrite,retain) NSString * screen_name;
-@property (readwrite,retain) NSString * description;
+@property (readwrite,retain) NSString * usrDesc;
 @property (readwrite,retain) NSString * profile_image_url;
 @property (readwrite,retain) NSString * url;
 //@property (readwrite,assign) BOOL isProtected;
