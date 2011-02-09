@@ -294,7 +294,7 @@
 	
 }
 #pragma mark -
-#pragma mark ---------category Statuses--------
+#pragma mark ---------category access--------
 -(Status *) retrieveStatusesShowWithWeiboID:(NSString *)weiboid{
 	if (weiboid == nil){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"weiboid should not be nil" userInfo:nil];
@@ -613,7 +613,7 @@
 				didFinishSelector:@selector(parserADirecteMessageWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
--(void) retrieveDirect_messagesDestroyWithID:(NSString *)dmID{
+-(DirectMessage *) retrieveDirect_messagesDestroyWithID:(NSString *)dmID{
 	if (dmID == nil){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"direct message ID is null" userInfo:nil];
 		@throw err;
@@ -622,10 +622,10 @@
 												 useHttpMethod:@"DELETE" withParametreDict:nil];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserADirecteMessageWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
--(void) retrieveDirect_messagesDestroy_batchWithIDS:(NSArray *)dmids{
+-(NSMutableArray *) retrieveDirect_messagesDestroy_batchWithIDS:(NSArray *)dmids{
 	if (dmids == nil){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"direct message Ids are null" userInfo:nil];
 		@throw err;
@@ -639,9 +639,10 @@
 											 withParametreDict:nil];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserDirecteMessageWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
+/*
 -(void) retrieveDirect_messagesUserlistWithCount:(NSNumber *)count cursor:(NSNumber *)cursor{
 	NSMutableDictionary *parametre = [[NSMutableDictionary alloc] init];
 	[self addParametreInDict:parametre withKey:@"count" andValue:count];
@@ -653,10 +654,10 @@
 				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];	
 }
-
+*/
 #pragma mark -
 #pragma mark APICategory : friends_ship
--(void) retrieveFriendsshipsCreateWithUserID:(NSString *)userID screen_name:(NSString *)screen_name{
+-(User *) retrieveFriendsshipsCreateWithUserID:(NSString *)userID screen_name:(NSString *)screen_name{
 	if (userID == nil && screen_name == nil){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"userID and screen_name are both null" userInfo:nil];
 		@throw err;
@@ -669,11 +670,11 @@
 												 withParametreDict:parametre];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserAUserWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
 
--(void) retrieveFriendsshipsDestroyWithUserID:(NSString *)userID screen_name:(NSString *)screen_name{
+-(User *) retrieveFriendsshipsDestroyWithUserID:(NSString *)userID screen_name:(NSString *)screen_name{
 	if (userID == nil && screen_name == nil){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"userID and screen_name are both null" userInfo:nil];
 		@throw err;
@@ -686,7 +687,7 @@
 												 withParametreDict:parametre];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserAUserWithTicket:didFinishWithData::didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];	
 }
 -(void) retrieveFriendsshipsExistsWithUserAID:(NSString *)userA userBID:(NSString *)userB{
@@ -702,7 +703,7 @@
 	
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parse:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];		
 }
 -(void) retrieveFriendsshipsShowWithUserAID:(NSString *)userAID userAName:(NSString *)userAName userBID:(NSString *)userBID userBName:(NSString *)userBName{
@@ -737,7 +738,7 @@
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];		
 	
 }
--(void) retrieveTrendsStatusesWithTrend_name:(NSString *)trend_name{
+-(NSMutableArray *) retrieveTrendsStatusesWithTrend_name:(NSString *)trend_name{
 	if(trend_name == nil){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"trend name shoudn't be null" userInfo:nil];
 		@throw err;
@@ -745,7 +746,7 @@
 	OAMutableURLRequest *request = [self prepareGetRequestWithURL:@"http://api.t.sina.com.cn/trends/statuses.json" withParametreDict:[NSDictionary dictionaryWithObject:trend_name forKey:@"trend_name"]];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserStatusesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];		
 }
 -(void) retrieveTrendsFollowWithTrend_name:(NSString *)trend_name{
@@ -836,7 +837,7 @@
 
 #pragma mark -
 #pragma mark API catagory : privacy
--(void) retrieveAccountUpdate_privacyWithComment:(NSNumber *)comment message:(NSNumber *)message realname:(NSNumber *)realname geo:(NSNumber *)geo badge:(NSNumber *)badge{
+-(User *) retrieveAccountUpdate_privacyWithComment:(NSNumber *)comment message:(NSNumber *)message realname:(NSNumber *)realname geo:(NSNumber *)geo badge:(NSNumber *)badge{
 	NSMutableDictionary *parameter = [[NSMutableDictionary alloc] init];
 	[self addParametreInDict:parameter withKey:@"comment" andValue:comment];
 	[self addParametreInDict:parameter withKey:@"message" andValue:message];
@@ -847,7 +848,7 @@
 	OAMutableURLRequest * request = [self preparePostRequestWithURL:@"http://api.t.sina.com.cn/account/update_privacy.json" withParametreDict:parameter];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserAUserWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];	
 }
 -(void) retrieveAccountGet_privacy{
@@ -861,7 +862,7 @@
 
 #pragma mark -
 #pragma mark API catagory : block
--(void) retrieveBlocksCreateWithUser_id:(NSString *) userID screen_name :(NSString *)screen_name{
+-(User *) retrieveBlocksCreateWithUser_id:(NSString *) userID screen_name :(NSString *)screen_name{
 	if (userID == nil && screen_name == nil){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"userID and screen_name are null" userInfo:nil];
 		@throw err;
@@ -873,10 +874,10 @@
 	OAMutableURLRequest *request = [self preparePostRequestWithURL:@"http://api.t.sina.com.cn/blocks/create.json" withParametreDict:parameter];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserAUserWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
--(void) retrieveBlocksDestroyWithUser_id:(NSString *) userID screen_name :(NSString *)screen_name{
+-(User *) retrieveBlocksDestroyWithUser_id:(NSString *) userID screen_name :(NSString *)screen_name{
 	if (userID == nil && screen_name == nil){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"userID and screen_name are null" userInfo:nil];
 		@throw err;
@@ -888,7 +889,7 @@
 	OAMutableURLRequest *request = [self preparePostRequestWithURL:@"http://api.t.sina.com.cn/blocks/destroy.json" withParametreDict:parameter];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserAUserWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
 -(void) retrieveBlocksExistWithUser_id:(NSString *) userID screen_name :(NSString *)screen_name{
@@ -907,7 +908,7 @@
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 	
 }
--(void) retrieveBlocksBlockingWithPage:(NSNumber *) page count:(NSNumber *) count{
+-(NSMutableArray *) retrieveBlocksBlockingWithPage:(NSNumber *) page count:(NSNumber *) count{
 	NSMutableDictionary * parameter = [[NSMutableDictionary alloc] init];
 	[self addParametreInDict:parameter withKey:@"page" andValue:page];
 	[self addParametreInDict:parameter withKey:@"count" andValue:count];
@@ -915,7 +916,7 @@
 	OAMutableURLRequest *request = [self prepareGetRequestWithURL:@"http://api.t.sina.com.cn/blocks/blocking.json" withParametreDict:parameter];
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserUsersWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 	
 }
@@ -1002,12 +1003,12 @@
 }
 #pragma mark -
 #pragma mark API Category : account
--(void) retrieveAccountVerify_credentials{
+-(User *) retrieveAccountVerify_credentials{
 	OAMutableURLRequest * request = [self prepareGetRequestWithURL:@"http://api.t.sina.com.cn/account/verify_credentials.json" withParametreDict:nil];
 	
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserAUserWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
 -(void) retrieveAccountRate_limit_status{
@@ -1018,34 +1019,29 @@
 				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];	
 }
--(void) retrieveAccountEnd_session{
+-(User *) retrieveAccountEnd_session{
 	OAMutableURLRequest * request = [self prepareGetRequestWithURL:@"http://api.t.sina.com.cn/account/end_session.json" withParametreDict:nil];
 	
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserAUserWithTicket :didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];		
 }
--(void) retrieveAccountUpdate_profile_imageWithImage:(NSString *)path{
+-(User *) retrieveAccountUpdate_profile_imageWithImage:(NSString *)path{
 	if (path == nil){
 		NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"path is null" userInfo:nil];
 		@throw err;	
 	}
 	NSMutableURLRequest * request = [self preparePostPicWithURL:@"http://api.t.sina.com.cn/account/update_profile_image.json" pathPic:path PicName:@"image" parametre:nil];
 	
-	NSURLResponse *response;
-    NSError *error;
-	NSData * responseData = [NSURLConnection sendSynchronousRequest:request
-												  returningResponse:&response
-															  error:&error];
-	NSString *responseBody = [[NSString alloc] initWithData:responseData
-												   encoding:NSUTF8StringEncoding];
-	
-	NSLog(@"%@", responseBody);
+    return [fetcher fetchDataWithURLRequest:request 
+                                   delegate:parser 
+                          didFinishSelector:@selector(parserAUserWithTicket:didFinishWithData:)  
+                            didFailSelector:@selector(fetchDataTicket:didFailWithError:)];	
 	
 }
 
--(void) retrieveAccountUpload_profileWithName:(NSString *)name gender:(NSString *)gender province:(NSNumber *)province city:(NSNumber *)city description:(NSString *)description{
+-(User *) retrieveAccountUpload_profileWithName:(NSString *)name gender:(NSString *)gender province:(NSNumber *)province city:(NSNumber *)city description:(NSString *)description{
     NSMutableDictionary * parameter = [[NSMutableDictionary alloc] init];
 	[self addParametreInDict:parameter withKey:@"name" andValue:name];
     [self addParametreInDict:parameter withKey:@"gender" andValue:gender];
@@ -1062,14 +1058,14 @@
     
     return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserAUserWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 	
 }
 
 #pragma mark -
 #pragma mark API Category : Favorite
--(void) retrieveFavoritesWithPage:(NSNumber *) page{
+-(NSMutableArray *) retrieveFavoritesWithPage:(NSNumber *) page{
     NSMutableDictionary * parameter = [[NSMutableDictionary alloc] init];
     [self addParametreInDict:parameter withKey:@"page" andValue:page];
 
@@ -1077,11 +1073,11 @@
     
     return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserStatusesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
 
--(void) retrieveFavoritesCreate:(NSString *)weiboID{
+-(Status *) retrieveFavoritesCreate:(NSString *)weiboID{
     if (weiboID == nil){
         NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"weiboID shoudn't be null" userInfo:nil];
 		@throw err;	
@@ -1091,11 +1087,11 @@
     
     return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserAStatusWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
 
--(void) retrieveFavoritesDestroyWithID:(NSString *)weiboID{
+-(Status *) retrieveFavoritesDestroyWithID:(NSString *)weiboID{
     if (weiboID == nil){
         NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"weiboID shoudn't be null" userInfo:nil];
 		@throw err;	
@@ -1106,11 +1102,11 @@
                                               withParametreDict:nil];
     return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserAStatusWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
 
--(void) retrieveFavoritesDestroy_batchWithIds:(NSArray *)ids{
+-(NSMutableArray *) retrieveFavoritesDestroy_batchWithIds:(NSArray *)ids{
     if ([ids count] == 0){
         NSException *err = [NSException exceptionWithName:@"InvalideParameter" reason:@"weiboID shoudn't be null" userInfo:nil];
 		@throw err;	
@@ -1126,7 +1122,7 @@
     
 	return [fetcher fetchDataWithRequest:request
 						 delegate:parser
-				didFinishSelector:@selector(sinaAPIStatusesPublic_timelineTicket:didFinishWithData:)
+				didFinishSelector:@selector(parserStatusesWithTicket:didFinishWithData:)
 				  didFailSelector:@selector(fetchDataTicket:didFailWithError:)];
 }
 

@@ -76,46 +76,46 @@
 
 #pragma mark -
 #pragma mark API catagory : access
--(NSMutableArray *) retrieveStatusesShowWithWeiboID:(NSString *)weiboid;
--(NSMutableArray *) retrieveUseridStatusesidWithUserID:(NSString *)userId weiboID:(NSString *)weiboID;
--(NSMutableArray *) retrieveStatusesUpdateWithStatuse:(NSString *)status 
+-(Status *) retrieveStatusesShowWithWeiboID:(NSString *)weiboid;
+-(Status *) retrieveUseridStatusesidWithUserID:(NSString *)userId weiboID:(NSString *)weiboID;
+-(Status *) retrieveStatusesUpdateWithStatuse:(NSString *)status 
 				   in_replay_to_status_id:(NSString *)inreplayID 
 								 latitude:(NSNumber *)lat 
 							   longtitude:(NSNumber *)lon;
--(NSMutableArray *) retrieveStatusesUploadWithStatuse:(NSString *)status
+-(Status *) retrieveStatusesUploadWithStatuse:(NSString *)status
 									  pic:(NSString *)pathPic 
 								 latitude:(NSNumber *)lat 
 							   longtitude:(NSNumber *)lon;
--(NSMutableArray *) retrieveStatusesDestroyWithWeiboID:(NSString *)weiboID;
--(NSMutableArray *) retrieveStatusesRepostWithWeiboID:(NSString *)weiboID status:(NSString *) status is_comment:(NSNumber *)is_comment;
--(NSMutableArray *) retrieveStatusesgiveCommentWithWeiboID:(NSString *)weiboID comment:(NSString *) comment cid:(NSString *) cid;
--(NSMutableArray *) retrieveStatusesComment_destroyWithCommentID:(NSString *)cid;
+-(Status *) retrieveStatusesDestroyWithWeiboID:(NSString *)weiboID;
+-(Status *) retrieveStatusesRepostWithWeiboID:(NSString *)weiboID status:(NSString *) status is_comment:(NSNumber *)is_comment;
+-(STComment *) retrieveStatusesgiveCommentWithWeiboID:(NSString *)weiboID comment:(NSString *) comment cid:(NSString *) cid;
+-(STComment *) retrieveStatusesComment_destroyWithCommentID:(NSString *)cid;
 -(NSMutableArray *) retrieveStatusesComment_destroyWithCommentIDS:(NSArray *)cids;
--(NSMutableArray *) retrieveStatusesReplyWithWeiboID:(NSString *)weiboID comment:(NSString *)comment cid:(NSString *)cid; 
+-(STComment *) retrieveStatusesReplyWithWeiboID:(NSString *)weiboID comment:(NSString *)comment cid:(NSString *)cid; 
 
 
 #pragma mark -
 #pragma mark API catagory : user Interface
--(NSMutableArray *) retrieveUsersShowWithUserID:(NSString *)userID screen_name:(NSString *)screen_name;
+-(User *) retrieveUsersShowWithUserID:(NSString *)userID screen_name:(NSString *)screen_name;
 -(NSMutableArray *) retrieveStatusesFriendsWithUserID:(NSString *)userID screen_name:(NSString *)screen_name cursor:(NSNumber *)cursor count:(NSNumber *)count;
 -(NSMutableArray *) retrieveStatusesFollowersWithUserID:(NSString *)userID screen_name:(NSString *)screen_name cursor:(NSNumber *)cursor count:(NSNumber *)count;
 -(NSMutableArray *) retrieveUsersHotWithCategory:(NSString *)category;
--(NSMutableArray *) retrieveUserFriendsUpdate_remarkWithUserID:(NSString *)userID remark:(NSString *)remark;
+-(User *) retrieveUserFriendsUpdate_remarkWithUserID:(NSString *)userID remark:(NSString *)remark;
 -(NSMutableArray *) retrieveUsersSuggestionsWith_reason:(NSNumber *)with_reason;
 
 #pragma mark -
 #pragma mark API catagory : direct message
 -(NSMutableArray *) retrieveDirect_messagesWithSinceID:(NSString *)sid  MaxID:(NSString *)max_ID Count:(NSNumber *)count Page:(NSNumber *)page;
 -(NSMutableArray *) retrieveDirect_messagesSentWithSinceID:(NSString *)sid  MaxID:(NSString *)max_ID Count:(NSNumber *)count Page:(NSNumber *)page;
--(NSMutableArray *) retrieveDirect_messagesNewWithUserID:(NSString *)userID text:(NSString *)text;
--(NSMutableArray *) retrieveDirect_messagesDestroyWithID:(NSString *)dmID;
+-(DirectMessage *) retrieveDirect_messagesNewWithUserID:(NSString *)userID text:(NSString *)text;
+-(DirectMessage *) retrieveDirect_messagesDestroyWithID:(NSString *)dmID;
 -(NSMutableArray *) retrieveDirect_messagesDestroy_batchWithIDS:(NSArray *)dmids;
--(NSMutableArray *) retrieveDirect_messagesUserlistWithCount:(NSNumber *)count cursor:(NSNumber *)cursor;
+//-(NSMutableArray *) retrieveDirect_messagesUserlistWithCount:(NSNumber *)count cursor:(NSNumber *)cursor;
 
 #pragma mark -
 #pragma mark API catagory : friendsships
--(NSMutableArray *) retrieveFriendsshipsCreateWithUserID:(NSString *)userID screen_name:(NSString *)screen_name;
--(NSMutableArray *) retrieveFriendsshipsDestroyWithUserID:(NSString *)userID screen_name:(NSString *)screen_name;
+-(User *) retrieveFriendsshipsCreateWithUserID:(NSString *)userID screen_name:(NSString *)screen_name;
+-(User *) retrieveFriendsshipsDestroyWithUserID:(NSString *)userID screen_name:(NSString *)screen_name;
 -(NSMutableArray *) retrieveFriendsshipsExistsWithUserAID:(NSString *)userA userBID:(NSString *)userB;
 -(NSMutableArray *) retrieveFriendsshipsShowWithUserAID:(NSString *)userAID userAName:(NSString *)userAName userBID:(NSString *)userBID userBName:(NSString *)userBName;
 
@@ -136,13 +136,13 @@
 
 #pragma mark -
 #pragma mark API catagory : privacy
--(NSMutableArray *) retrieveAccountUpdate_privacyWithComment:(NSNumber *)comment message:(NSNumber *)message realname:(NSNumber *)realname geo:(NSNumber *)geo badge:(NSNumber *)badge;
+-(User *) retrieveAccountUpdate_privacyWithComment:(NSNumber *)comment message:(NSNumber *)message realname:(NSNumber *)realname geo:(NSNumber *)geo badge:(NSNumber *)badge;
 -(NSMutableArray *) retrieveAccountGet_privacy;
 
 #pragma mark -
 #pragma mark API catagory : block
--(NSMutableArray *) retrieveBlocksCreateWithUser_id:(NSString *) userID screen_name :(NSString *)screen_name;
--(NSMutableArray *) retrieveBlocksDestroyWithUser_id:(NSString *) userID screen_name :(NSString *)screen_name;
+-(User *) retrieveBlocksCreateWithUser_id:(NSString *) userID screen_name :(NSString *)screen_name;
+-(User *) retrieveBlocksDestroyWithUser_id:(NSString *) userID screen_name :(NSString *)screen_name;
 -(NSMutableArray *) retrieveBlocksExistWithUser_id:(NSString *) userID screen_name :(NSString *)screen_name;
 -(NSMutableArray *) retrieveBlocksBlockingWithPage:(NSNumber *) page count:(NSNumber *) count;
 -(NSMutableArray *) retrieveBlocksBlockingIdsWithPage:(NSNumber *)page count:(NSNumber *)count;
@@ -157,17 +157,17 @@
 
 #pragma mark -
 #pragma mark API Category : account
--(NSMutableArray *) retrieveAccountVerify_credentials;
+-(User *) retrieveAccountVerify_credentials;
 -(NSMutableArray *) retrieveAccountRate_limit_status;
--(NSMutableArray *) retrieveAccountEnd_session;
--(NSMutableArray *) retrieveAccountUpdate_profile_imageWithImage:(NSString *)path;
--(NSMutableArray *) retrieveAccountUpload_profileWithName:(NSString *)name gender:(NSString *)gender province:(NSNumber *)province city:(NSNumber *)city description:(NSString *)description;
+-(User *) retrieveAccountEnd_session;
+-(User *) retrieveAccountUpdate_profile_imageWithImage:(NSString *)path;
+-(User *) retrieveAccountUpload_profileWithName:(NSString *)name gender:(NSString *)gender province:(NSNumber *)province city:(NSNumber *)city description:(NSString *)description;
 
 #pragma mark -
 #pragma mark API Category : Favorite
 -(NSMutableArray *) retrieveFavoritesWithPage:(NSNumber *) page;
--(NSMutableArray *) retrieveFavoritesCreate:(NSString *)weiboID;
--(NSMutableArray *) retrieveFavoritesDestroyWithID:(NSString *)weiboID;
+-(Status *) retrieveFavoritesCreate:(NSString *)weiboID;
+-(Status *) retrieveFavoritesDestroyWithID:(NSString *)weiboID;
 -(NSMutableArray *) retrieveFavoritesDestroy_batchWithIds:(NSArray *)ids;
 
 

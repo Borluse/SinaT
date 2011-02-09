@@ -73,10 +73,10 @@
 //	NSLog(@"%@", [sinaAPI retrieveUsersSuggestionsWith_reason:[NSNumber numberWithInt:1]]);
 //	NSLog(@"%@", [sinaAPI retrieveDirect_messagesWithSinceID:nil MaxID:nil Count:[NSNumber numberWithInt:5] Page:nil]);
 //	NSLog(@"%@", [sinaAPI retrieveDirect_messagesSentWithSinceID:nil MaxID:nil Count:nil Page:nil]);
-	NSLog(@"%@",[sinaAPI retrieveDirect_messagesNewWithUserID:@"1611598955" text:@"这臭的头头"]);
-	//	NSLog(@"%@",[sinaAPI retrieveDirect_messagesDestroyWithID:@"877133527"];
-	//NSLog(@"%@",[sinaAPI retrieveDirect_messagesUserlistWithCount:nil cursor:nil];
-	//	NSLog(@"%@",[sinaAPI retrieveFriendsshipsShowWithUserAID:nil userAName:nil userBID:nil userBName:@"碰碰狸"];
+//	NSLog(@"%@",[sinaAPI retrieveDirect_messagesNewWithUserID:@"1611598955" text:@"这臭的头头"]);
+//    NSLog(@"%@",[sinaAPI retrieveDirect_messagesDestroyWithID:@"877133527"]);
+//	NSLog(@"%@",[sinaAPI retrieveDirect_messagesUserlistWithCount:nil cursor:nil]);
+//        NSLog(@"%@",[sinaAPI retrieveFriendsshipsShowWithUserAID:nil userAName:nil userBID:nil userBName:@"碰碰狸"]);
 	//	NSLog(@"%@",[sinaAPI retrieveFriendsshipsDestroyWithUserID:nil screen_name:@"碰碰狸"];
 	//		NSLog(@"%@",[sinaAPI retrieveFriendsshipsCreateWithUserID:nil screen_name:@"碰碰狸"];
 	//	NSLog(@"%@",[sinaAPI retrieveTrendsWithUserID:@"1390984450"];
@@ -88,6 +88,7 @@
 	//	NSLog(@"%@",[sinaAPI retrieveTrendsDaily];
 	//	NSLog(@"%@",[sinaAPI retrieveFollowersIdsWithUserID:nil screen_name:@"碰碰狸" count:nil cursor:nil];
 	//	NSLog(@"%@",[sinaAPI retrieveFriendsIdsWithUserID:nil screen_name:@"碰碰狸" count:nil cursor:nil];
+        
 	//	NSLog(@"%@",[sinaAPI retrieveAccountGet_privacy];
 	//	NSLog(@"%@",[sinaAPI retrieveBlocksCreateWithUser_id:nil screen_name:@"碰碰狸"];
 	//	NSLog(@"%@",[sinaAPI retrieveBlocksDestroyWithUser_id:nil screen_name:@"碰碰狸"];
