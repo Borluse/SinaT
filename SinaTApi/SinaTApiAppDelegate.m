@@ -15,8 +15,8 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     // Insert code here to initialize your application
     auth = [[OAuthBase alloc] init];
-	sinaAPI = [[SinaApiRequest alloc] initWithAccessTokenKey:@"e432f889bf970d1541a4001ae8e035e7"
-													  secret:@"a80e999dde2931d6de00b16b1634c779"];
+	sinaAPI = [[SinaApiRequest alloc] initWithAccessTokenKey:@""
+													  secret:@""];
 	
 }
 
