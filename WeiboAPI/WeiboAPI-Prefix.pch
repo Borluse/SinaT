@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'WeiboAPI' target in the 'WeiboAPI' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif

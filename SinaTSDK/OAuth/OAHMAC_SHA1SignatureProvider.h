@@ -23,7 +23,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
-
+#include <sys/attr.h>
 #import <Foundation/Foundation.h>
 #import "OASignatureProviding.h"
 
