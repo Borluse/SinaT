@@ -20,6 +20,7 @@
 
 @property (retain) SinaApiParser * parser;
 -(id) initWithAccessTokenKey:(NSString *) akey secret:(NSString *) asecret;
+-(id) initWithAccessToken:(OAToken *)accToken;
 //-(id) init;
 
 #pragma mark -

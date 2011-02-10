@@ -20,6 +20,11 @@
 	}
 	return self;
 }
+-(id) initWithAccessToken:(OAToken *)accToken{
+    if ((self = [self initWithAccessTokenKey:[accToken key] secret:[accToken secret]])){
+    }
+    return self;
+}
 -(NSArray *) retrieveStatusesPublic_timelineWithCount:(NSNumber *)count{
 	NSMutableDictionary * parametre = [[NSMutableDictionary alloc] init];
 	[self addParametreInDict:parametre withKey:@"count" andValue:count]; 
@@ -35,6 +40,7 @@
 	
 
 }
+
 -(NSArray *) retrieveStatusesFriends_timelineWithSinceID:(NSString *)sid 
 											  MaxID:(NSString *)max_ID 
 											  Count:(NSNumber *)count 
