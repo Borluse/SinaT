@@ -1,6 +1,6 @@
 //
 //  SinaApiParser.h
-//  Test
+//  SinaTApi
 //
 //  Created by Fan ZHAO on 30/12/10.
 //  Copyright 2010 Personne. All rights reserved.

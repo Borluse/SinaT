@@ -4,7 +4,9 @@
 //
 //  Created by fanng yuan on 12/8/10.
 //  Copyright 2010 fanngyuan@sina. All rights reserved.
+//  Modified by ZHAO Fan.
 //
+
 
 #import <Foundation/Foundation.h>
 //#import "BaseStatus.h"

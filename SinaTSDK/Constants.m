@@ -2,7 +2,7 @@
 //  Constants.m
 //  Test
 //
-//  Created by Borluse on 26/12/10.
+//  Created by ZHAO Fan on 26/12/10.
 //  Copyright 2010 Personne. All rights reserved.
 //
 

@@ -197,11 +197,9 @@
 			isa = PBXGroup;
 			children = (
 				655E926A130082A6003D0CB8 /* adt */,
-				655E9273130082A6003D0CB8 /* basicAuth */,
 				655E9274130082A6003D0CB8 /* Constants.h */,
 				655E9275130082A6003D0CB8 /* Constants.m */,
 				655E927B130082A6003D0CB8 /* OAuth */,
-				655E929D130082A6003D0CB8 /* parser */,
 				655E929F130082A6003D0CB8 /* SinaApiParser.h */,
 				655E92A0130082A6003D0CB8 /* SinaApiParser.m */,
 				655E92A1130082A6003D0CB8 /* SinaApiRequest.h */,
@@ -223,13 +221,6 @@
 				655E9272130082A6003D0CB8 /* User.m */,
 			);
 			path = adt;
-			sourceTree = "<group>";
-		};
-		655E9273130082A6003D0CB8 /* basicAuth */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = basicAuth;
 			sourceTree = "<group>";
 		};
 		655E927B130082A6003D0CB8 /* OAuth */ = {
@@ -277,21 +268,6 @@
 				655E927E130082A6003D0CB8 /* Base64Transcoder.h */,
 			);
 			path = Crypto;
-			sourceTree = "<group>";
-		};
-		655E929D130082A6003D0CB8 /* parser */ = {
-			isa = PBXGroup;
-			children = (
-				655E929E130082A6003D0CB8 /* jsonFramework */,
-			);
-			path = parser;
-			sourceTree = "<group>";
-		};
-		655E929E130082A6003D0CB8 /* jsonFramework */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = jsonFramework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

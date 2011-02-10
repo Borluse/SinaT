@@ -1,9 +1,9 @@
 /*
  *  Constants.h
  *
- *  Created by Borluse on 11/29/10.
+ *  Created by fanng yuan on 11/29/10.
  *  Copyright 2010 fanngyuan@sina. All rights reserved.
- *	modified by Borluse
+ *	modified by ZHAO Fan
  */
 
 //for status get method
